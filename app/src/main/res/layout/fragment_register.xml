@@ -54,7 +54,7 @@
             app:layout_constraintEnd_toEndOf="@id/tvLetsRegister"
             android:textAlignment="center"
             android:gravity="center"
-            android:text="계정이 있나요? 로그인을 하세요"
+            android:text="계정을 만들었나요? 로그인을 하세요"
             />
 
         <EditText

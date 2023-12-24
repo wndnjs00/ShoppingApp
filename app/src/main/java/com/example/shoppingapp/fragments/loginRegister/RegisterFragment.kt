@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.kelineyt.viewmodel.RegisterViewModel
+import com.example.shoppingapp.R
 import com.example.shoppingapp.data.User
 import com.example.shoppingapp.databinding.FragmentRegisterBinding
 import com.example.shoppingapp.util.RegisterValidation
@@ -37,6 +39,11 @@ class RegisterFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //tvDoYouHaveAccount클릭시
+        binding.tvDoYouHaveAccount.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
 
         //회원가입 버튼함수 호출
         binding.apply {

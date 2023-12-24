@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.shoppingapp.R
 import com.example.shoppingapp.activities.ShoppingActivity
 import com.example.shoppingapp.databinding.FragmentLoginBinding
@@ -36,7 +37,14 @@ class LoginFragment : Fragment(R.layout.fragment_login){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 버튼클릭시
+
+        //tvDontHaveAccount클릭시
+        binding.tvDontHaveAccount.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
+
+
+        // buttonLoginLogin 버튼클릭시
         binding.apply {
             buttonLoginLogin.setOnClickListener {
                 val email = edEmailLogin.text.toString().trim()
